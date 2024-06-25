@@ -3,6 +3,7 @@
 -- WORKSPACE
 workspace "PeachPit"
 	architecture "x86_64"
+	startproject "sandbox"
 	
 	configurations
 	{
@@ -13,7 +14,7 @@ workspace "PeachPit"
 	
 -- binary directory
 
-BIN_DIR = "%{cfg.buildcfg}-%{cfg.architecture}/"
+BIN_DIR = "%{cfg.buildcfg}-%{cfg.architecture}"
 
 -- PROJECTS
 include "peachpit/peachpit"

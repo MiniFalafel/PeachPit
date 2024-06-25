@@ -1,5 +1,10 @@
+# Visual Studio
 .vs/
 **.vcxproj
 **.vcxproj.user
 **.vcxproj.filters
 **.sln
+
+# Binaries
+bin/
+binobj/
