@@ -5,8 +5,8 @@ project "glfw"
 	language "C"
 	staticruntime "on"
 
-	targetdir ("bin/" .. BIN_DIR .. "%{prj.name}")
-	objdir ("binobj/" .. BIN_DIR .. "%{prj.name}")
+	targetdir ("%{wks.location}/bin/" .. BIN_DIR .. "/%{prj.name}")
+	objdir ("%{wks.location}/binobj/" .. BIN_DIR .. "/%{prj.name}")
 
 	files
 	{
