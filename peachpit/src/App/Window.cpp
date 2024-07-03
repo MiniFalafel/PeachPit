@@ -1,7 +1,5 @@
 #include "Window.h"
 
-#include "Core/Core.h"
-
 #include <GLFW/glfw3.h>
 
 namespace Peach

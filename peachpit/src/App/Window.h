@@ -1,8 +1,6 @@
 #pragma once
 
-#include "Core/Core.h"
-
-// Testing new GPG signature commit status
+#include "App/Core.h"
 
 namespace Peach
 {

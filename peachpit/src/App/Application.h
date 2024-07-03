@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core/Core.h"
+#include "App/Core.h"
 #include "Window.h"
 
 namespace Peach
