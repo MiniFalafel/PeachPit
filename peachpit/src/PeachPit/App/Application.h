@@ -1,7 +1,7 @@
 #pragma once
 
-#include "App/Core.h"
-#include "Window.h"
+#include "PeachPit/App/Core.h"
+#include "PeachPit/App/Window.h"
 
 namespace Peach
 {

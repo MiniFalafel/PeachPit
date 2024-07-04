@@ -1,6 +1,6 @@
 #include "RenderingAPI.h"
 
-#include "App/Core.h"
+#include "PeachPit/App/Core.h"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>

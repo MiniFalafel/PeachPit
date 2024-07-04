@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Log.h"
+#include "PeachPit/App/Log.h"
 
 // Assertions
 #define ASSERT(x, msg) if(!(x)) { LOG_ERROR(msg) }

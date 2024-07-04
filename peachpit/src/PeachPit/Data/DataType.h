@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-#include "App/Core.h"
+#include "PeachPit/App/Core.h"
 
 namespace Peach
 {

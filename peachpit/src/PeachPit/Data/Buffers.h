@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <memory>
 
-#include "VertexLayout.h"
+#include "PeachPit/Data/VertexLayout.h"
 
 namespace Peach
 {

@@ -6,7 +6,6 @@ namespace Peach
 {
 
     // VERTEX BUFFER
-    // Private Constructor
     VertexBuffer::VertexBuffer(float* data, uint32_t size)
     {
         // Generate Buffer
@@ -39,7 +38,6 @@ namespace Peach
     }
 
     // INDEX BUFFER
-    // Private Constructor
     IndexBuffer::IndexBuffer(uint32_t* data, uint32_t size)
     {
         // Generate Buffer

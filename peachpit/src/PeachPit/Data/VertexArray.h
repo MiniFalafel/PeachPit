@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Buffers.h"
+#include "PeachPit/Data/Buffers.h"
 
 namespace Peach
 {
