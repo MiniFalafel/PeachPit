@@ -16,3 +16,16 @@ project "glad"
 	includedirs {
 		"%{prj.location}/include"
 	}
+	
+	-- Filters
+	filter "configurations:DEBUG"
+		runtime "Debug"
+		symbols "on"
+		
+	filter "configurations:RELEASE"
+		runtime "Release"
+		symbols "on"
+		
+	filter "configurations:DIST"
+		runtime "Release"
+		optimize "on"

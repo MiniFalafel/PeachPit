@@ -16,6 +16,8 @@ project "glfw"
 		"%{prj.location}/src/**.c",
 	}
 
+	
+	-- Filters
 	filter "system:windows"
 		systemversion "latest"
 
@@ -37,11 +39,16 @@ project "glfw"
 			"_GLFW_WIN32",
 			"_CRT_SECURE_NO_WARNINGS"
 		}
-
-	filter "configurations:Debug"
+		
+	-- Config
+	filter "configurations:DEBUG"
 		runtime "Debug"
 		symbols "on"
-
-	filter "configurations:Release"
+		
+	filter "configurations:RELEASE"
+		runtime "Release"
+		symbols "on"
+		
+	filter "configurations:DIST"
 		runtime "Release"
 		optimize "on"

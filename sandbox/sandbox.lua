@@ -24,3 +24,17 @@ project "sandbox"
 	links {
 		"peachpit"
 	}
+	
+	-- Filters
+	filter "configurations:DEBUG"
+		runtime "Debug"
+		symbols "on"
+		
+	filter "configurations:RELEASE"
+		runtime "Release"
+		symbols "on"
+		
+	filter "configurations:DIST"
+		runtime "Release"
+		optimize "on"
+	
