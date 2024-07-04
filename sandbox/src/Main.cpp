@@ -1,4 +1,4 @@
-#include <PeachPit.h>
+#include <PeachPit/PeachPit.h>
 
 class MyApp : public Peach::Application
 {
