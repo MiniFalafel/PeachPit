@@ -13,15 +13,15 @@ namespace Peach
 		// OPENGL ID
 		uint32_t m_ID = 0;
 
-		// Stored VertexLayout
+		// Members
 		VertexLayout m_Layout;
-
+		uint32_t m_Count;
 
 	public:
-		VertexBuffer(float* data, uint32_t size);
+		VertexBuffer(float* data, uint32_t count);
 
 		// API Methods
-		static std::shared_ptr<VertexBuffer> Create(float* data, uint32_t size);
+		static std::shared_ptr<VertexBuffer> Create(float* data, uint32_t count);
 
 		// Bind/Unbind
 		void Bind() const;
@@ -32,6 +32,7 @@ namespace Peach
 
 		// GETTERS
 		const VertexLayout& GetVertexLayout() const { return m_Layout; }
+		uint32_t GetCount() const { return m_Count; }
 
 	};
 
@@ -39,17 +40,23 @@ namespace Peach
 	{
 		// OPENGL ID
 		uint32_t m_ID = 0;
+		
+		// Members
+		uint32_t m_Count;
 
 
 	public:
-		IndexBuffer(uint32_t* data, uint32_t size);
+		IndexBuffer(uint32_t* data, uint32_t count);
 
 		// API Methods
-		static std::shared_ptr<IndexBuffer> Create(uint32_t* data, uint32_t size);
+		static std::shared_ptr<IndexBuffer> Create(uint32_t* data, uint32_t count);
 
 		// Bind/Unbind
 		void Bind() const;
 		void Unbind() const;
+
+		// GETTER
+		uint32_t GetCount() const { return m_Count; }
 
 
 	};

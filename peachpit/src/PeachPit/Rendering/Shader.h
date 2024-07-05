@@ -30,6 +30,9 @@ namespace Peach
 		Shader(std::string filePath);
 		~Shader();
 
+		// Interface
+		void Use() const;
+
 		// API creation thing (this is to keep usage consistent because things like framebuffers will heavily rely on this and having it everywhere might make more sense to users).
 		static std::shared_ptr<Shader> Create(std::string vertexSource, std::string fragmentSource);
 		static std::shared_ptr<Shader> Create(std::string filePath);

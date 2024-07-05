@@ -12,5 +12,6 @@
 #include "PeachPit/Data/VertexArray.h" // Includes VertexBuffer.h for us
 
 // Rendering type includes
-#include "Rendering/Shader.h"
+#include "PeachPit/Rendering/Renderer.h"
+#include "PeachPit/Rendering/Shader.h"
 

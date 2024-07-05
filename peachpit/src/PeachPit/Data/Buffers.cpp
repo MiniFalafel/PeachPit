@@ -6,20 +6,21 @@ namespace Peach
 {
 
     // VERTEX BUFFER
-    VertexBuffer::VertexBuffer(float* data, uint32_t size)
+    VertexBuffer::VertexBuffer(float* data, uint32_t count)
+        : m_Count(count)
     {
         // Generate Buffer
         glCreateBuffers(1, &m_ID);
 
         // Upload the data to the GPU
         Bind();
-        glBufferData(GL_ARRAY_BUFFER, sizeof(float) * size, data, GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(float) * count, data, GL_STATIC_DRAW);
     }
 
     // API Methods
-    std::shared_ptr<VertexBuffer> VertexBuffer::Create(float* data, uint32_t size)
+    std::shared_ptr<VertexBuffer> VertexBuffer::Create(float* data, uint32_t count)
     {
-        return std::make_shared<VertexBuffer>(data, size);
+        return std::make_shared<VertexBuffer>(data, count);
     }
 
     void VertexBuffer::Bind() const
@@ -38,20 +39,21 @@ namespace Peach
     }
 
     // INDEX BUFFER
-    IndexBuffer::IndexBuffer(uint32_t* data, uint32_t size)
+    IndexBuffer::IndexBuffer(uint32_t* data, uint32_t count)
+        : m_Count(count)
     {
         // Generate Buffer
         glCreateBuffers(1, &m_ID);
 
         // Upload the data to the GPU
         Bind();
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint32_t) * size, data, GL_STATIC_DRAW);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint32_t) * count, data, GL_STATIC_DRAW);
     }
 
     // API Methods
-    std::shared_ptr<IndexBuffer> IndexBuffer::Create(uint32_t* data, uint32_t size)
+    std::shared_ptr<IndexBuffer> IndexBuffer::Create(uint32_t* data, uint32_t count)
     {
-        return std::make_shared<IndexBuffer>(data, size);
+        return std::make_shared<IndexBuffer>(data, count);
     }
 
     void IndexBuffer::Bind() const

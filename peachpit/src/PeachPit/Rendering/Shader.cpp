@@ -147,6 +147,11 @@ namespace Peach
 		glDeleteProgram(m_ID);
 	}
 
+	void Shader::Use() const
+	{
+		glUseProgram(m_ID);
+	}
+
 	// API CREATE
 	std::shared_ptr<Shader> Shader::Create(std::string vertexSource, std::string fragmentSource)
 	{

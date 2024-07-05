@@ -2,6 +2,7 @@
 #include "Application.h"
 
 #include "PeachPit/Rendering/RenderingAPI.h"
+#include "PeachPit/Rendering/Renderer.h"
 
 namespace Peach
 {
@@ -36,6 +37,16 @@ namespace Peach
 		{
 			// Update running variable
 			m_Running = !m_Window.CheckShouldClose();
+
+			// RENDERING
+			// Clear
+			Renderer::Clear();
+
+			// Update layers
+			for (std::shared_ptr<Layer> layer : m_Layers)
+			{
+				layer->OnUpdate();
+			}
 
 			// Update the window
 			m_Window.SwapPoll(); // swap buffers and poll for events.
