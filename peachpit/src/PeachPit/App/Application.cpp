@@ -8,10 +8,10 @@ namespace Peach
 
 	// initialize static variable for singleton
 	Application* Application::s_Instance = nullptr;
-	bool Application::s_Running = false;
 
 	// Constructor
 	Application::Application()
+		: m_Running(false)
 	{
 		// Do singleton stuff
 		ASSERT(!s_Instance, "An instance of Application has already been initialized!");
@@ -27,15 +27,15 @@ namespace Peach
 	void Application::Run()
 	{
 		// Check if the application is already doing a run loop.
-		ASSERT(!s_Running, "An instance of Application is already running! (Application::Run cannot be called twice)");
+		ASSERT(!m_Running, "An instance of Application is already running! (Application::Run cannot be called twice)");
 
 
 		// While loop
-		s_Running = true;
-		while (s_Running)
+		m_Running = true;
+		while (m_Running)
 		{
 			// Update running variable
-			s_Running = !m_Window.CheckShouldClose();
+			m_Running = !m_Window.CheckShouldClose();
 
 			// Update the window
 			m_Window.SwapPoll(); // swap buffers and poll for events.
