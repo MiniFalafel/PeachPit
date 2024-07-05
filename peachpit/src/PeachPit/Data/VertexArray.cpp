@@ -47,17 +47,26 @@ namespace Peach
         for (const VertexLayoutElement& e : layout)
         {   // Set info about vertex data
             glEnableVertexAttribArray(index);
-            glVertexAttribPointer(index, e.Size, GetOpenGLDataType(e.Type), 
+            glVertexAttribPointer(index, e.GetCount(), GetOpenGLDataType(e.Type),
                 e.Normalized ? GL_TRUE : GL_FALSE, layout.GetStride(), (void*)e.Offset);
             // Increment index
             index++;
         }
+
+        // Emplace into m_VBOs
+        m_VBOs.emplace_back(VBO);
     }
 
     void VertexArray::SetIndexBuffer(std::shared_ptr<IndexBuffer> EBO)
     {   // Bind and then bind the index buffer
         Bind();
         EBO->Bind();
+        // Set m_EBO
+        m_EBO = EBO;
+    }
+    std::shared_ptr<IndexBuffer> VertexArray::GetIndexBuffer()
+    {
+        return m_EBO;
     }
 }
 

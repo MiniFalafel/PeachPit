@@ -16,8 +16,13 @@ namespace Peach
 		uint32_t Size;
 		uint32_t Offset;
 
-		VertexLayoutElement(std::string name, DataType type, bool normalized)
+		VertexLayoutElement(std::string name, DataType type, bool normalized = false)
 			: Name(name), Type(type), Normalized(normalized), Size(DataTypeSizeof(Type)), Offset(0) {}
+
+		uint32_t GetCount() const
+		{
+			return DataTypeElementCount(Type);
+		}
 	};
 
 	class VertexLayout
